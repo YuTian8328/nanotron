@@ -9,6 +9,8 @@ torchrun --nproc_per_node=8 run_train.py --config-file examples/config_tiny_llam
 """
 import argparse
 from typing import Dict, cast
+import torch
+import triton
 
 import numpy as np
 from nanotron import logging
@@ -228,7 +230,8 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
     config_file = args.config_file
-
+    print(torch.__version__)
+    print(triton.__version__)
     # Load trainer and data
     trainer = DistributedTrainer(config_file)
     dataloader = get_dataloader(trainer)

@@ -10,7 +10,7 @@
 #SBATCH --partition=standard-g
 #SBATCH --mem=480G
 #SBATCH --time=00:30:00
-#SBATCH --account=project_462000365
+#SBATCH --account=${project_id}
 
 # module load LUMI  # Which version doesn't matter, it is only to get the container.
 export SIFPYTORCH=/appl/local/containers/easybuild-sif-images/lumi-pytorch-rocm-6.2.0-python-3.10-pytorch-v2.3.0-dockerhash-187f41102477.sif

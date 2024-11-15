@@ -27,8 +27,8 @@ export NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
 export NCCL_NET_GDR_LEVEL=3
 source /opt/miniconda3/bin/activate
 conda activate pytorch
-export PYTHONPATH=/scratch/project_462000365/tianyu12/nanotron/preview_torch:$PYTHONPATH
-export HF_DATASETS_CACHE=/scratch/project_462000365/tianyu12/nanotron/hf_datasets_cache
+export PYTHONPATH=/scratch/$project_id/$USER/nanotron/preview_torch:$PYTHONPATH
+export HF_DATASETS_CACHE=/scratch/$project_id/$USER/nanotron/hf_datasets_cache
 
 # Report affinity to check gpu visibility
 echo "Rank $SLURM_PROCID --> $(taskset -p $$); GPU $ROCR_VISIBLE_DEVICES"
